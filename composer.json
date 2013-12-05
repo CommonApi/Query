@@ -1,0 +1,24 @@
+{
+    "name": "commonapi/database",
+    "description": "Common Database Api Interface",
+    "keywords": ["api", "CommonApi", "database"],
+    "homepage": "https://github.com/CommonApi/Database",
+    "type": "api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AmyStephen",
+            "email": "AmyStephen@Molajo.org",
+            "homepage": "http://Molajo.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.10",
+        "commonapi/exception": ">=0.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "CommonApi\\Database\\": ""
+        }
+    }
+}
