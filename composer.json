@@ -1,8 +1,8 @@
 {
-    "name": "commonapi/database",
-    "description": "Common Database Api Interface",
-    "keywords": ["api", "CommonApi", "database"],
-    "homepage": "https://github.com/CommonApi/Database",
+    "name": "commonapi/query",
+    "description": "Common Query Api Interface",
+    "keywords": ["api", "CommonApi", "query"],
+    "homepage": "https://github.com/CommonApi/Query",
     "type": "api",
     "license": "MIT",
     "authors": [
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-0": {
-            "CommonApi\\Database\\": ""
+            "CommonApi\\Query\\": ""
         }
     }
 }
