@@ -29,7 +29,7 @@ interface QueryInterface
      *  $query->order('id');
      *
      * @return  object
-     * @since   0.1
+     * @since   1.0
      */
     public function getQueryObject();
 
@@ -37,7 +37,7 @@ interface QueryInterface
      * Returns a string containing the query, resolved from the query object
      *
      * @return  string
-     * @since   0.1
+     * @since   1.0
      */
     public function getQueryString();
 }
