@@ -105,7 +105,7 @@ interface QueryInterface
      * @return  $this
      * @since   1.0.0
      */
-    public function whereGroup($group, $group_connector = 'and');
+    public function whereGroup($group, $group_connector = 'AND');
 
     /**
      * Set Where Conditions for Query
@@ -135,12 +135,11 @@ interface QueryInterface
      * Set Group By column name and optional value for alias
      *
      * @param   string      $column_name
-     * @param   null|string $alias
      *
      * @return  $this
      * @since   1.0.0
      */
-    public function groupBy($column_name, $alias = null);
+    public function groupBy($column_name);
 
     /**
      * Create a grouping for having statements for 'and' or 'or' treatment between groups of conditions
@@ -151,7 +150,7 @@ interface QueryInterface
      * @return  $this
      * @since   1.0.0
      */
-    public function havingGroup($group, $group_connector = 'and');
+    public function havingGroup($group, $group_connector = 'AND');
 
     /**
      * Set Having Conditions for Query
