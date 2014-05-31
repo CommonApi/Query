@@ -22,7 +22,7 @@ interface QueryInterface
      * Clear Query String
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function clearQuery();
 
@@ -32,7 +32,7 @@ interface QueryInterface
      * @param   string $query_type
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function setType($query_type = 'select');
 
@@ -40,7 +40,7 @@ interface QueryInterface
      * Retrieves the PHP date format compliant with the database driver
      *
      * @return  string
-     * @since   1.0
+     * @since   1.0.0
      */
     public function getDateFormat();
 
@@ -48,7 +48,7 @@ interface QueryInterface
      * Retrieves the current date and time formatted in a manner compliant with the database driver
      *
      * @return  string
-     * @since   1.0
+     * @since   1.0.0
      */
     public function getDate();
 
@@ -56,7 +56,7 @@ interface QueryInterface
      * Returns a value for null date that is compliant with the database driver
      *
      * @return  string
-     * @since   1.0
+     * @since   1.0.0
      */
     public function getNullDate();
 
@@ -66,7 +66,7 @@ interface QueryInterface
      * @param   boolean $distinct
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function setDistinct($distinct = false);
 
@@ -80,8 +80,8 @@ interface QueryInterface
      * @param   null|string $data_type
      *
      * @return  $this
-     * @since   1.0
-     * @throws \CommonApi\Exception\RuntimeException
+     * @since   1.0.0
+     * @throws  \CommonApi\Exception\RuntimeException
      */
     public function select($column_name, $alias = null, $value = null, $data_type = null);
 
@@ -92,7 +92,7 @@ interface QueryInterface
      * @param   null|string $alias
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function from($table_name, $alias = null);
 
@@ -103,7 +103,7 @@ interface QueryInterface
      * @param   string $group_connector
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function whereGroup($group, $group_connector = 'and');
 
@@ -119,7 +119,7 @@ interface QueryInterface
      * @param   null|string $group
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function where(
         $left_filter = 'column',
@@ -137,8 +137,8 @@ interface QueryInterface
      * @param   string      $column_name
      * @param   null|string $alias
      *
-     * @return $this
-     * @since  1.0
+     * @return  $this
+     * @since   1.0.0
      */
     public function groupBy($column_name, $alias = null);
 
@@ -149,7 +149,7 @@ interface QueryInterface
      * @param   string $group_connector
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function havingGroup($group, $group_connector = 'and');
 
@@ -164,7 +164,7 @@ interface QueryInterface
      * @param   string $connector
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function having(
         $left_filter = 'column',
@@ -182,7 +182,7 @@ interface QueryInterface
      * @param   null|string $direction
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function orderBy($column_name, $direction = 'ASC');
 
@@ -193,7 +193,7 @@ interface QueryInterface
      * @param   int $limit
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function setOffsetAndLimit($offset = 0, $limit = 15);
 
@@ -203,7 +203,7 @@ interface QueryInterface
      * @param   null|string $sql
      *
      * @return  string
-     * @since   1.0
+     * @since   1.0.0
      */
     public function getSQL($sql = null);
 }
