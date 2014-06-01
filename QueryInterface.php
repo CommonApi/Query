@@ -19,10 +19,21 @@ namespace CommonApi\Query;
 interface QueryInterface
 {
     /**
+     * Get the current value (or default) of the specified property
+     *
+     * @param   string $key
+     * @param   mixed  $default
+     *
+     * @return  mixed
+     * @since   1.0.0
+     */
+    public function get($key, $default = null);
+    
+    /**
      * Clear Query String
      *
      * @return  $this
-     * @since   1.0.0
+     * @since   1.0
      */
     public function clearQuery();
 
@@ -32,23 +43,15 @@ interface QueryInterface
      * @param   string $query_type
      *
      * @return  $this
-     * @since   1.0.0
+     * @since   1.0
      */
     public function setType($query_type = 'select');
-
-    /**
-     * Retrieves the PHP date format compliant with the database driver
-     *
-     * @return  string
-     * @since   1.0.0
-     */
-    public function getDateFormat();
 
     /**
      * Retrieves the current date and time formatted in a manner compliant with the database driver
      *
      * @return  string
-     * @since   1.0.0
+     * @since   1.0
      */
     public function getDate();
 
@@ -56,17 +59,25 @@ interface QueryInterface
      * Returns a value for null date that is compliant with the database driver
      *
      * @return  string
-     * @since   1.0.0
+     * @since   1.0
      */
     public function getNullDate();
 
+    /**
+     * Retrieves the PHP date format compliant with the database driver
+     *
+     * @return  string
+     * @since   1.0
+     */
+    public function getDateFormat();
+    
     /**
      * Set Distinct Indicator
      *
      * @param   boolean $distinct
      *
      * @return  $this
-     * @since   1.0.0
+     * @since   1.0
      */
     public function setDistinct($distinct = false);
 
@@ -80,8 +91,8 @@ interface QueryInterface
      * @param   null|string $data_type
      *
      * @return  $this
-     * @since   1.0.0
-     * @throws  \CommonApi\Exception\RuntimeException
+     * @since   1.0
+     * @throws \CommonApi\Exception\RuntimeException
      */
     public function select($column_name, $alias = null, $value = null, $data_type = null);
 
@@ -92,21 +103,32 @@ interface QueryInterface
      * @param   null|string $alias
      *
      * @return  $this
-     * @since   1.0.0
+     * @since   1.0
      */
     public function from($table_name, $alias = null);
 
     /**
-     * Create a grouping for conditions for 'and' or 'or' treatment between groups of conditions
+     * Create a grouping for conditions for 'AND' or 'OR' treatment between groups of conditions
      *
      * @param   string $group
      * @param   string $group_connector
      *
      * @return  $this
-     * @since   1.0.0
+     * @since   1.0
      */
     public function whereGroup($group, $group_connector = 'AND');
 
+    /**
+     * Create a grouping for having statements for 'AND' or 'OR' treatment between groups of conditions
+     *
+     * @param   string $group
+     * @param   string $group_connector
+     *
+     * @return  $this
+     * @since   1.0
+     */
+    public function havingGroup($group, $group_connector = 'AND');
+    
     /**
      * Set Where Conditions for Query
      *
@@ -119,7 +141,7 @@ interface QueryInterface
      * @param   null|string $group
      *
      * @return  $this
-     * @since   1.0.0
+     * @since   1.0
      */
     public function where(
         $left_filter = 'column',
@@ -132,27 +154,6 @@ interface QueryInterface
     );
 
     /**
-     * Set Group By column name and optional value for alias
-     *
-     * @param   string      $column_name
-     *
-     * @return  $this
-     * @since   1.0.0
-     */
-    public function groupBy($column_name);
-
-    /**
-     * Create a grouping for having statements for 'and' or 'or' treatment between groups of conditions
-     *
-     * @param   string $group
-     * @param   string $group_connector
-     *
-     * @return  $this
-     * @since   1.0.0
-     */
-    public function havingGroup($group, $group_connector = 'AND');
-
-    /**
      * Set Having Conditions for Query
      *
      * @param   string $left_filter
@@ -163,7 +164,7 @@ interface QueryInterface
      * @param   string $connector
      *
      * @return  $this
-     * @since   1.0.0
+     * @since   1.0
      */
     public function having(
         $left_filter = 'column',
@@ -171,9 +172,19 @@ interface QueryInterface
         $condition,
         $right_filter = 'column',
         $right,
-        $connector = 'and'
+        $connector = 'AND'
     );
 
+    /**
+     * Set Group By column name and optional value for alias
+     *
+     * @param   string      $column_name
+     *
+     * @return $this
+     * @since  1.0
+     */
+    public function groupBy($column_name);
+    
     /**
      * Set Order By column name and optional value for alias
      *
@@ -181,7 +192,7 @@ interface QueryInterface
      * @param   null|string $direction
      *
      * @return  $this
-     * @since   1.0.0
+     * @since   1.0
      */
     public function orderBy($column_name, $direction = 'ASC');
 
@@ -192,17 +203,17 @@ interface QueryInterface
      * @param   int $limit
      *
      * @return  $this
-     * @since   1.0.0
+     * @since   1.0
      */
     public function setOffsetAndLimit($offset = 0, $limit = 15);
-
+    
     /**
      * Get SQL (optionally setting the SQL)
      *
      * @param   null|string $sql
      *
      * @return  string
-     * @since   1.0.0
+     * @since   1.0
      */
-    public function getSQL($sql = null);
+    public function getSql($sql = null);
 }
