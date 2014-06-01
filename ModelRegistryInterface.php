@@ -48,5 +48,5 @@ interface ModelRegistryInterface
      * @return  string
      * @since   1.0.0
      */
-    public function getSQL($sql = null);
+    public function getSql($sql = null);
 }
