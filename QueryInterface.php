@@ -205,4 +205,24 @@ interface QueryInterface
      * @since   1.0.0
      */
     public function setOffsetAndLimit($offset = 0, $limit = 15);
+    
+    /**
+     * Escape the value
+     *
+     * @param   string $value
+     *
+     * @return  string
+     * @since   1.0.0
+     */
+    public function escape($value);
+
+    /**
+     * Escape the name value
+     *
+     * @param   string $name
+     *
+     * @return  string
+     * @since   1.0.0
+     */
+    public function escapeName($name);
 }

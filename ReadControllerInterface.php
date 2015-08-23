@@ -1,6 +1,6 @@
 <?php
 /**
- * Query Builder Interface
+ * Read Controller Interface
  *
  * @package    Query
  * @copyright  2014 Amy Stephen. All rights reserved.
@@ -9,13 +9,20 @@
 namespace CommonApi\Query;
 
 /**
- * Query Builder Interface
+ * Read Controller Interface
  *
  * @package    Query
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
  * @copyright  2014 Amy Stephen. All rights reserved.
- * @since      1.0.0
+ * @since      1.0
  */
-interface QueryBuilderInterface extends ModelRegistryInterface, QueryInterface
+interface ReadControllerInterface
 {
+    /**
+     * Method to get data from model
+     *
+     * @return  mixed
+     * @since   1.0.0
+     */
+    public function getData();
 }

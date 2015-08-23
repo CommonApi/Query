@@ -1,6 +1,6 @@
 <?php
 /**
- * Query Builder Interface
+ * Update Model Interface
  *
  * @package    Query
  * @copyright  2014 Amy Stephen. All rights reserved.
@@ -9,13 +9,23 @@
 namespace CommonApi\Query;
 
 /**
- * Query Builder Interface
+ * Update Model Interface
  *
  * @package    Query
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
  * @copyright  2014 Amy Stephen. All rights reserved.
- * @since      1.0.0
+ * @since      1.0
  */
-interface QueryBuilderInterface extends ModelRegistryInterface, QueryInterface
+interface UpdateModelInterface
 {
+    /**
+     * Update Data
+     *
+     * @param   string $sql
+     *
+     * @return  mixed
+     * @since   1.0
+     * @throws  \CommonApi\Exception\RuntimeException
+     */
+    public function updateData($sql);
 }
